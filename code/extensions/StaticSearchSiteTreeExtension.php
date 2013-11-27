@@ -9,9 +9,21 @@
  */
 class StaticSearchSiteTreeExtension extends DataExtension {
 
-
-	function init() { 
-		parent::init(); 
+	/*
+	 * Returns an array of words to be excluded from search
+	 *
+	 * @return array
+	 */
+	public function getExcludedWords(){
+		return array(
+			" a ", " and ", " be ", " by ",
+			" do ", " for ", " he ",
+			" how ", " if ", " is ",
+			" it ", " my ", " not ",
+			" of ", " or ", " the ",
+			" to ", " up ", " what ",
+			" when "
+		);
 	}
 
 	/*
@@ -41,13 +53,22 @@ class StaticSearchSiteTreeExtension extends DataExtension {
 	 * Tip: if you have a lot of pages on your site, use an abstract field for this
 	 * and search via a tag (keyword) based system rather than fulltext.
 	 *
-	 * Should not contain html or unescaped double quotations
+	 * Should not contain html or unescaped double quotations. 
+	 * Removes a list of excluded words, plus all line breaks
 	 * 
 	 * @return Text
 	 */
 	public function getSearchableContent(){
-		$result = $this->owner->dbObject('Content')->NoHTML();
-		return str_replace(array('"',"\r", "\n"), array("'"," ", " "), $result);
+		$strip = array('"',"\r", "\n");
+		$replace = array("'"," ", " ");
+		$content = $this->owner->dbObject('Content')->NoHTML();
+
+		$abstract = substr($content, 0, 100);
+		$prepped =  str_replace($this->getExcludedWords(), ' ', substr($content, 100));
+
+		$result = $abstract.$prepped;
+
+		return str_replace($strip, $replace, $result);
 	}
 
 
