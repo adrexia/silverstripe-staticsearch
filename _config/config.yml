@@ -1,0 +1,6 @@
+---
+Name: staticsearchconfig
+---
+SiteTree:
+  extensions:
+   - StaticSearchSiteTreeExtension

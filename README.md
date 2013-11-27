@@ -1,4 +1,5 @@
-silverstripe-staticsearch
-=========================
+# Static Search
 
-Provides an alternative search option to statically published silverstripe sites
+An implementation of Tipuq search designed to work in SilverStripe with the Static Publish Queue module
+
+(incomplete)

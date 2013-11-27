@@ -1,0 +1,17 @@
+{
+	"name": "silverstripe/staticsearch",
+	"description":  "Static Search provides an alternative search option to statically published silverstripe sites",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "static", "search", "javascript"],
+	"require": {
+		"silverstripe/framework": "~3.1",
+		"silverstripe/cms": "~3.1",
+		"silverstripe/staticpublishqueue": "dev-subsites"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/stojg/silverstripe-staticpublishqueue.git"
+		}
+	],
+}
