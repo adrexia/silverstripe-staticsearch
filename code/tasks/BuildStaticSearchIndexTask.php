@@ -43,8 +43,6 @@ class BuildStaticSearchIndexTask extends BuildTask {
 			$item = new ViewableData($this); 
 			$json = $viewer->process($this->getAllLivePages());
 			file_put_contents($cacheBaseDir .'/search_index.js', $json);
-			// for testing pre staticpublisherqueue upgrade
-			file_put_contents(ASSETS_PATH .'/search_index.js', $json); 
 		}
 
 		return true;
