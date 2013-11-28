@@ -14,12 +14,14 @@ This module works with:
 * Extension to SiteTree to add methods that generate data for searchable fields. These can be overridden at Page level if necessary.
 
 * Build Task to generate json index files for each subsite (stored in the cache directory). Format:
-	{
-		"title": "page title", 
-		"text":"Prepped page content", 
-		"tags":"Taxonomy or meta description", 
-		"loc":"Page URL"
-	}
+
+
+    {
+         "title": "page title", 
+         "text":"Prepped page content", 
+         "tags":"Taxonomy or meta description", 
+         "loc":"Page URL"
+    }
 
 * Basic implementation of Tipue JavaScript search, in static mode.
 
