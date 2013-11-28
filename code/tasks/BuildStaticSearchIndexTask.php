@@ -21,19 +21,19 @@ class BuildStaticSearchIndexTask extends BuildTask {
 	public function run($request) {
 
 		$cacheBaseDir = singleton('FilesystemPublisher')->getDestDir();
-		
+
+		// First generate the search file for the base site
+		$viewer = new SSViewer(array('StaticSearchJSON'));
+		$item = new ViewableData($this); 
+		$json = $viewer->process($this->getAllLivePages(0));
+
+		$domain = Config::inst()->get('FilesystemPublisher', 'static_base_url');
+
+		$urlFragments = parse_url($domain);
+		$cacheDir = $cacheBaseDir . "/" . $urlFragments['host'];
+		file_put_contents($cacheDir .'/search_index.js', $json); 
+
 		if(class_exists('Subsite')) {
-			
-			// First generate the search file for the base site
-			$viewer = new SSViewer(array('StaticSearchJSON'));
-			$item = new ViewableData($this); 
-			$json = $viewer->process($this->getAllLivePages(0));
-
-			$domain = Config::inst()->get('FilesystemPublisher', 'static_base_url');
-
-			$urlFragments = parse_url($domain);
-			$cacheDir = $cacheBaseDir . "/" . $urlFragments['host'];
-			file_put_contents($cacheDir .'/search_index.js', $json); 
 
 			// Then generate the files for the subsites
 			$subsites = Subsite::all_sites();
@@ -50,14 +50,7 @@ class BuildStaticSearchIndexTask extends BuildTask {
 					file_put_contents($cacheDir .'/search_index.js', $json); 
 				}
 			}
-
-		} else{
-			$viewer = new SSViewer(array('StaticSearchJSON'));
-			$item = new ViewableData($this); 
-			$json = $viewer->process($this->getAllLivePages());
-			file_put_contents($cacheBaseDir .'/search_index.js', $json);
 		}
-
 		return true;
 	}
 
