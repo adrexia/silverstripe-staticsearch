@@ -48,22 +48,6 @@ class BuildStaticSearchIndexTask extends BuildTask {
 		return true;
 	}
 
-
-	/**
-	 * Adds an array of urls to the Queue
-	 *  
-	 * @param array $count
-	 * @return bool - if any pages were queued
-	 */
-	protected function URLs($urls = array()) {
-		if(!count($urls)) {
-			return false;
-		}
-		URLArrayObject::add_urls($urls);
-		return true;
-	}
-
-
 	/**
 	 * 
 	 * @return DataList
