@@ -2,9 +2,7 @@ _(For "in development" branch of static publish queue: https://github.com/stojg/
 
 # Static Search
 
-An implementation of Tipue search (http://www.tipue.com/search/docs/) designed to work in SilverStripe with the Static Publish Queue module (https://github.com/silverstripe-labs/silverstripe-staticpublishqueue). This implementation uses the static mode of Tipue search.
-
-
+An implementation of [Tipue search](http://www.tipue.com/search/docs/) designed to work in SilverStripe with the [ Static Publish Queue](https://github.com/silverstripe-labs/silverstripe-staticpublishqueue) module. This implementation uses the static mode of Tipue search.
 
 
 **This module works with:**
