@@ -21,10 +21,22 @@ class BuildStaticSearchIndexTask extends BuildTask {
 	public function run($request) {
 
 		$cacheBaseDir = singleton('FilesystemPublisher')->getDestDir();
-
+		
 		if(class_exists('Subsite')) {
-			$subsites = Subsite::all_sites();
+			
+			// First generate the search file for the base site
+			$viewer = new SSViewer(array('StaticSearchJSON'));
+			$item = new ViewableData($this); 
+			$json = $viewer->process($this->getAllLivePages(0));
 
+			$domain = Config::inst()->get('FilesystemPublisher', 'static_base_url');
+
+			$urlFragments = parse_url($domain);
+			$cacheDir = $cacheBaseDir . "/" . $urlFragments['host'];
+			file_put_contents($cacheDir .'/search_index.js', $json); 
+
+			// Then generate the files for the subsites
+			$subsites = Subsite::all_sites();
 			foreach ($subsites as $subsite) {
 				$viewer = new SSViewer(array('StaticSearchJSON'));
 				$item = new ViewableData($this); 
@@ -38,6 +50,7 @@ class BuildStaticSearchIndexTask extends BuildTask {
 					file_put_contents($cacheDir .'/search_index.js', $json); 
 				}
 			}
+
 		} else{
 			$viewer = new SSViewer(array('StaticSearchJSON'));
 			$item = new ViewableData($this); 
