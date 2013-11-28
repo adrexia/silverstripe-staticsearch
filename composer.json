@@ -1,5 +1,5 @@
 {
-	"name": "silverstripe/staticsearch",
+	"name": "adrexia/staticsearch",
 	"description":  "Static Search provides an alternative search option to statically published silverstripe sites",
 	"type": "silverstripe-module",
 	"keywords": ["silverstripe", "static", "search", "javascript"],
