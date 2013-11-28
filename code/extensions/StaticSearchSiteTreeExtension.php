@@ -89,4 +89,20 @@ class StaticSearchSiteTreeExtension extends DataExtension {
 		$data = $this->owner->MetaDescription();
 		return str_replace(array('"',"\r", "\n"), array("'"," ", " "), $data);
 	}
+
+	/**
+	 * Cache search with the home url to make sure it 
+	 * a. belongs to a subsite and
+	 * b. only gets cached once
+	 *
+	 * @return array
+	 */
+	public function urlsToCache() {
+		if($this->owner->URLSegment == 'home'){
+			$urls[Director::BaseURL().'search'] = 0;
+		}
+		$urls[$this->owner->Link()] = 0;
+
+		return $urls;
+	}
 }
