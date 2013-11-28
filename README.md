@@ -1,4 +1,4 @@
-_(For "in development" branch of static publish queue: https://github.com/stojg/silverstripe-staticpublishqueue/tree/metadata)_
+_(For "in development" branch of static publish queue: https://github.com/stojg/silverstripe-staticpublishqueue/tree/2.0_
 
 # Static Search
 
