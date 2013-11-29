@@ -1,7 +1,7 @@
 jQuery(function($) {
 	$('#tipue_search_input').tipuesearch({
 		'mode': 'static',
-		'contentLocation': '/search_index.html'
+		'contentLocation': '/search_index'
 	});
 
 	$("form.no-pageload input").keypress(function(e){
