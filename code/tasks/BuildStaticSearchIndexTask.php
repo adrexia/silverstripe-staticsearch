@@ -59,7 +59,7 @@ class BuildStaticSearchIndexTask extends BuildTask {
 	 * @return DataList
 	 */
 	protected function getAllLivePages($subsiteID = 0) {
-		ini_set('memory_limit', '512M');
+		ini_set('memory_limit', '200M');
 		$oldMode = Versioned::get_reading_mode();
 		if(class_exists('Subsite')) {
 			Subsite::disable_subsite_filter(true);
