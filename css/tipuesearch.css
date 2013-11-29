@@ -19,13 +19,6 @@ http://www.tipue.com/search
 	text-rendering: optimizelegibility;
 	margin-top: 23px;
 }
-.tipue_search_content_title a {
-	color: #3f72d8;
-	text-decoration: none;
-}
-.tipue_search_content_title a:hover {
-	color: #333;
-}
 .tipue_search_content_text {
 	color: #333;
 	padding: 13px 0;
@@ -44,13 +37,6 @@ http://www.tipue.com/search
 	hyphens: auto;
 	border-bottom:1px solid #efefef;
 	padding-bottom:20px;
-}
-.tipue_search_content_loc a {
-	color: #096;
-	text-decoration: none;
-}
-.tipue_search_content_loc a:hover {
-	color: #333;
 }
 #tipue_search_foot {
 	margin: 51px 0 21px 0;
