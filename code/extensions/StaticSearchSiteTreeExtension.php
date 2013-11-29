@@ -78,14 +78,6 @@ class StaticSearchSiteTreeExtension extends DataExtension {
 	 * @return Text
 	 */
 	public function getSearchableTags(){
-		if(class_exists('TaxonomyTerm') && $this->owner->TaxonomyTerm()) {
-			$results = array();
-			$data = $this->owner->TaxonomyTerm();
-			foreach($data as $tag){
-				array_push($results, $tag->Name);
-			}
-			return implode(', ', $results);
-		}
 		$data = $this->owner->MetaDescription();
 		return str_replace(array('"',"\r", "\n"), array("'"," ", " "), $data);
 	}

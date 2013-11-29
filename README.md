@@ -8,7 +8,6 @@ An implementation of [Tipue search](http://www.tipue.com/search/docs/) designed 
 **This module works with:**
 
 * subsites (optional)
-* taxonomy module (optional)
 * static publish queue (mandatory)
 
 ## Approach
