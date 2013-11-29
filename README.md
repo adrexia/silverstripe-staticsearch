@@ -43,7 +43,7 @@ Update your repo:
 ### Integration
 Add the search form to your page: 
 
-    <% include SearchForm %>
+    <% include StaticSearchForm %>
 
 Include StaticSearchRequirements in the __head__ of your page. 
 
