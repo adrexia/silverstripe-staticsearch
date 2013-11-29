@@ -31,7 +31,7 @@ class BuildStaticSearchIndexTask extends BuildTask {
 
 		$urlFragments = parse_url($domain);
 		$cacheDir = $cacheBaseDir . "/" . $urlFragments['host'];
-		file_put_contents($cacheDir .'/search_index.js', $json); 
+		file_put_contents($cacheDir .'/search_index.html', $json); 
 
 		if(class_exists('Subsite')) {
 
@@ -47,7 +47,7 @@ class BuildStaticSearchIndexTask extends BuildTask {
 				foreach ($domains as $domain){
 					$urlFragments = parse_url($domain->Domain);
 					$cacheDir = $cacheBaseDir . "/" . $urlFragments['path'];
-					file_put_contents($cacheDir .'/search_index.js', $json); 
+					file_put_contents($cacheDir .'/search_index.html', $json); 
 				}
 			}
 		}
