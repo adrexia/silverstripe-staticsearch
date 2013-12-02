@@ -29,12 +29,10 @@ http://www.tipue.com/search
 	hyphens: auto;
 }
 .tipue_search_content_loc {
-	font-size:0.9em;
-	word-break: break-all;
-	word-break: break-word;
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;
+	font-size:0;
+	height:0;
+	opacity:0;
+	visibility:hidden;
 	border-bottom:1px solid #efefef;
 	padding-bottom:20px;
 }
