@@ -42,7 +42,7 @@ class StaticSearchSiteTreeExtension extends DataExtension {
 			'Title' => $this->owner->Title,
 			'Text' => $this->owner->getSearchableContent(),
 			'Tags' => $this->owner->getSearchableTags(),
-			'Loc' => $this->owner->AbsoluteLink()
+			'Loc' => $this->owner->Link()
 		)));
 
 		return $results;
