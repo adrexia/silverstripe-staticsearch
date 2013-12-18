@@ -1,4 +1,10 @@
 jQuery(function($) {
+	
+	//prevent undeclared variable
+	var tipuesearch = {"pages": [
+		{"title": "", "text":"", "tags":"", "loc":""}
+	]};
+
 	$('#tipue_search_input').tipuesearch({
 		'mode': 'static',
 		'contentLocation': '/search_index'
