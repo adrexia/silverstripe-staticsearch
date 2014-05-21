@@ -1,5 +1,3 @@
-_(For "in development" branch of static publish queue: https://github.com/stojg/silverstripe-staticpublishqueue/tree/2.0_
-
 # Static Search
 
 An implementation of [Tipue search](http://www.tipue.com/search/docs/) designed to work in SilverStripe with the [ Static Publish Queue](https://github.com/silverstripe-labs/silverstripe-staticpublishqueue) module. This implementation uses the static mode of Tipue search.
